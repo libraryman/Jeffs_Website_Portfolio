@@ -60,8 +60,14 @@ p {
 	color: #121212;
 }
 .section-heading .line-dec {
-	width: 60px;
-	height: 3px;
+	width: 160px;
+	height: 6px;
+	background-color: #121212;
+	margin: 0 auto;
+}
+.section-heading .line-dec1 {
+	width: 100px;
+	height: 6px;
 	background-color: #121212;
 	margin: 0 auto;
 }
@@ -79,6 +85,7 @@ p {
     text-align: center;
     line-height: 40px;
 }
+
 
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
     text-shadow: none;
