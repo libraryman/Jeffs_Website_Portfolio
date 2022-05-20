@@ -22,7 +22,7 @@ p {
 }
 .primary-button a {
 	display: inline-block;
-	background-color: #a2cf8d;
+	background-color: #ee3124;
 	padding: 12px 18px;
 	color: #fff;
 	font-size: 11px;
@@ -125,14 +125,7 @@ p {
     -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
-.navbar-brand .logo{
-	margin-top: 22px;
-	background-image: url(../img/white_logo.png);
-	display: inline-block;
-	width: 125px;
-	height: 32px;
-	background-repeat: no-repeat;
-}
+
 .header.active .navbar-brand .logo{
 	margin-top: 22px;
 	background-image: url(../img/black_logo.png);
@@ -140,6 +133,7 @@ p {
 	width: 125px;
 	height: 32px;
 	background-repeat: no-repeat;
+	
 }
 #main-nav {
 	background-color: transparent;
@@ -161,11 +155,11 @@ p {
 }
 .navbar-inverse .navbar-toggle {
 	margin-top: 22px;
-    border-color: #a2cf8d;
-    background-color: #a2cf8d;
+    border-color: #ee3124;
+    background-color: #ee3124;
 }
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-	background-color: #a2cf8d;
+	background-color: #ee3124;
 }
 bootstrap.min.css:5
 .navbar-toggle {
@@ -251,7 +245,7 @@ ul.cd-hero-slider {
 }
 
 .service-item:hover {
-	background-color: #a2cf8d;
+	background-color: #ee3124;
 }
 
 .service-item h4 {
@@ -381,7 +375,7 @@ ul.cd-hero-slider {
 }
 
 .filter-categories ul li.active span {
-  color: #a2cf8d;
+  color: #ee3124;
 }
 
 .project-item {
@@ -418,7 +412,7 @@ ul.cd-hero-slider {
 	height: 46px;
 	background-color: #fff;
 	line-height: 46px;
-	color: #a2cf8d;
+	color: #ee3124;
 	border-radius: 50%;
 	font-size: 18px;
 }
@@ -522,7 +516,7 @@ ul.cd-hero-slider {
 	line-height: 44px;
 	color: #fff;
 	text-align: center;
-	background-color: #a2cf8d;
+	background-color: #ee3124;
 }
 
 .pop span:hover, .pop2 span:hover, .pop3 span:hover {
@@ -548,7 +542,7 @@ ul.cd-hero-slider {
 .fact-item .counter {
 	font-size: 24px;
 	font-weight: 700;
-	color: #a2cf8d;
+	color: #ee3124;
 }
 
 .fact-item span {
@@ -620,7 +614,7 @@ ul.cd-hero-slider {
 
 #contact button {
 	display: inline-block;
-	background-color: #a2cf8d;
+	background-color: #ee3124;
 	padding: 12px 18px;
 	color: #fff;
 	font-size: 11px;
@@ -655,7 +649,7 @@ footer p {
 footer em {
 	font-style: normal;
 	font-weight: 700;
-	color: #a2cf8d;
+	color: #ee3124;
 }
 
 footer ul {
@@ -675,7 +669,7 @@ footer ul li a {
 	line-height: 36px;
 	text-align: center;
 	display: inline-block;
-	background-color: #a2cf8d;
+	background-color: #ee3124;
 	color: #202628;
 	border-radius: 50%;
 }
