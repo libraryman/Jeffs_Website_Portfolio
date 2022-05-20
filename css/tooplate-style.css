@@ -34,7 +34,7 @@ p {
 	transition: all 0.5s;
 }
 .primary-button a:hover {
-	background-color: #5c9d7d;
+	background-color: #000000;
 }
 .white-button a {
 	display: inline-block;
@@ -245,7 +245,7 @@ ul.cd-hero-slider {
 }
 
 .service-item:hover {
-	background-color: #ee3124;
+	background-color: #000000;
 }
 
 .service-item h4 {
@@ -265,47 +265,47 @@ ul.cd-hero-slider {
 }
 
 .first-service .icon {
-	background-image: url(../img/first-service-main.png);
+	background-image: url(../img/noun-book.png);
 	height: 32px;
 	width: 32px;
 	display: inline-block;
 }
 
 .first-service:hover .icon {
-	background-image: url(../img/first-service-white.png);
+	background-image: url(../img/noun-book-white.png);
 }
 
 .second-service .icon {
-	background-image: url(../img/second-service-main.png);
+	background-image: url(../img/noun-computer.png);
 	height: 32px;
 	width: 22px;
 	display: inline-block;
 }
 
 .second-service:hover .icon {
-	background-image: url(../img/second-service-white.png);
+	background-image: url(../img/noun-computer-white.png);
 }
 
 .third-service .icon {
-	background-image: url(../img/third-service-main.png);
+	background-image: url(../img/noun-university.png);
 	height: 32px;
 	width: 32px;
 	display: inline-block;
 }
 
 .third-service:hover .icon {
-	background-image: url(../img/third-service-white.png);
+	background-image: url(../img/noun-university-white.png);
 }
 
 .fourth-service .icon {
-	background-image: url(../img/fourth-service-main.png);
+	background-image: url(../img/noun-book-info.png);
 	height: 32px;
 	width: 32px;
 	display: inline-block;
 }
 
 .fourth-service:hover .icon {
-	background-image: url(../img/fourth-service-white.png);
+	background-image: url(../img/noun-book-info-white.png);
 }
 
 
@@ -418,7 +418,7 @@ ul.cd-hero-slider {
 }
 
 .project-item .hover-effect i:hover {
-	background-color: #5c9d7d;
+	background-color: #000000;
 	color: #fff;
 	transition: all 0.5s;
 }
@@ -520,7 +520,7 @@ ul.cd-hero-slider {
 }
 
 .pop span:hover, .pop2 span:hover, .pop3 span:hover {
-	background-color: #5c9d7d;
+	background-color: #000000;
 	transition: all 0.5s;
 }
 
@@ -627,7 +627,7 @@ ul.cd-hero-slider {
 
 #contact button:hover {
 	color: #fff;
-	background-color: #5c9d7d;
+	background-color: #000000;
 	transition: all 0.3s;
 }
 
@@ -676,7 +676,7 @@ footer ul li a {
 
 footer ul li a:hover {
 	color: #202628;
-	background-color: #5c9d7d;
+	background-color: #000000;
 	transition: all 0.5s;
 }
 
