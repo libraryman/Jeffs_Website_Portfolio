@@ -211,7 +211,7 @@ Single slide style
   background-repeat: no-repeat;
 }
 .cd-hero-slider li:first-of-type {
-  background-image: url(../img/slide_01.jpg);
+  background-image: url(../img/lb.jpg);
 }
 .cd-hero-slider li:nth-of-type(2) {
   background-image: url(../img/slide_02.jpg);
