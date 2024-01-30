@@ -122,9 +122,10 @@ p {
 }
 
 .navbar-nav>li>a {
-	color: #fff!important;
-	font-size: 13px;
-	font-weight: 300;
+	color: #121212!important;
+	!important;
+	font-size: 20px;
+	font-weight: 1300;
 	text-transform: uppercase;
 	text-shadow: none;
 	line-height: 80px;
@@ -137,8 +138,8 @@ p {
 }
 
 .header.active .navbar-nav>li>a {
-	font-size: 13px;
-	font-weight: 300;
+	font-size: 20px;
+	font-weight: 1300;
 	text-transform: uppercase;
 	text-shadow: none;
 	color: #121212!important;
@@ -225,7 +226,7 @@ bootstrap.min.css:5
 /* HERO SLIDER */
 
 .slide-caption {
-	color: #fff;
+	color: #080808;
 }
 
 .slide-caption span {
