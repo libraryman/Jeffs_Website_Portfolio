@@ -495,19 +495,28 @@
                 log: function () { }
             };
         }
-    </script>
+        <!-- BOOK ANIMATION INTERACTION SCRIPT -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.book-cover').on('click', function () {
+                    // 1. Trigger the 3D flip rotation
+                    $('#book-container').addClass('open');
 
-    <!-- BOOK ANIMATION INTERACTION SCRIPT -->
-    <script type="text/javascript">
-        document.querySelector('.book-cover').addEventListener('click', function () {
-            // Trigger 3D flip rotation
-            document.getElementById('book-container').classList.add('open');
+                    // 2. Wait for the 1.6s animation to finish, then destroy the lock
+                    setTimeout(function () {
+                        // Hide the overlay entirely
+                        $('#book-container').addClass('hidden-overlay');
 
-            // Allow the 1.6s animation to cleanly finish, then drop the overlay completely
-            setTimeout(() => {
-                document.getElementById('book-container').classList.add('hidden-overlay');
-                document.body.classList.remove('book-locked');
-            }, 1600);
+                        // Strip the locking class
+                        $('body').removeClass('book-locked');
+
+                        // FORCE override any stubborn CSS layout locks
+                        $('html, body').css({
+                            'overflow': 'visible',
+                            'height': 'auto'
+                        });
+                    }, 1600);
+                });
         });
     </script>
 </body>
