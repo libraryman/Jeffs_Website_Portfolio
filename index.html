@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="css/fontAwesome.css">
     <link rel="stylesheet" href="css/hero-slider.css">
     <link rel="stylesheet" href="css/tooplate-style.css">
-    <!-- NEW BOOK ANIMATION STYLESHEET -->
-    <link rel="stylesheet" href="css/book.css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
@@ -27,7 +25,7 @@
         /* Prevents scrolling while the book cover is active */
         body.book-locked {
             overflow: hidden !important;
-            height: 100vh;
+            height: 100vh !important;
         }
 
         /* 3D Viewport Wrapper */
@@ -43,7 +41,7 @@
             perspective: 2200px;
             background-color: #0d0d0d;
             z-index: 999999;
-            /* Higher than Bootstrap components */
+            /* Keeps cover above all theme layers */
             transition: opacity 0.6s ease, visibility 0.6s ease;
         }
 
@@ -176,14 +174,12 @@
     </style>
 </head>
 
-<!-- Added 'book-locked' class to stop user scrolling while cover is present -->
-
 <body class="book-locked">
 
     <!-- BOOK INTRO OVERLAY -->
     <div id="book-container" class="book-container">
         <div class="book">
-            <!-- Added inline onclick here to force execution -->
+            <!-- Inline fail-safe click action added here -->
             <div class="book-cover" onclick="openMyBook()">
                 <div class="cover-front">
                     <div class="book-spine-crease"></div>
@@ -497,7 +493,8 @@
             };
         }
     </script>
-    <!-- BOOK ANIMATION INTERACTION SCRIPT -->
+
+    <!-- BOOK ANIMATION INTERACTION SCRIPT (Bypasses jQuery completely) -->
     <script type="text/javascript">
         function openMyBook() {
             var container = document.getElementById('book-container');
@@ -505,12 +502,12 @@
                 // 1. Trigger the 3D flip rotation immediately
                 container.classList.add('open');
 
-                // 2. Wait for the 1.6s animation to finish, then drop all locks
+                // 2. Wait for the 1.6s animation to finish, then drop all layout freezes
                 setTimeout(function () {
                     container.classList.add('hidden-overlay');
                     document.body.classList.remove('book-locked');
 
-                    // FORCE override layout locks on both HTML and Body tags for scrolling
+                    // FORCE layout properties back to scrollable defaults
                     document.documentElement.style.setProperty('overflow', 'visible', 'important');
                     document.documentElement.style.setProperty('height', 'auto', 'important');
                     document.body.style.setProperty('overflow', 'visible', 'important');
