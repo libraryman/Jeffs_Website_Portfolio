@@ -183,7 +183,8 @@
     <!-- BOOK INTRO OVERLAY -->
     <div id="book-container" class="book-container">
         <div class="book">
-            <div class="book-cover">
+            <!-- Added inline onclick here to force execution -->
+            <div class="book-cover" onclick="openMyBook()">
                 <div class="cover-front">
                     <div class="book-spine-crease"></div>
                     <div class="cover-title-badge">
@@ -495,35 +496,28 @@
                 log: function () { }
             };
         }
-        <!-- BOOK ANIMATION INTERACTION SCRIPT -->
-        <script type="text/javascript">
-        // Using pure Vanilla JS to completely bypass any jQuery version conflicts
-            document.addEventListener('DOMContentLoaded', function() {
-            var bookCover = document.querySelector('.book-cover');
-            var bookContainer = document.getElementById('book-container');
+    </script>
+    <!-- BOOK ANIMATION INTERACTION SCRIPT -->
+    <script type="text/javascript">
+        function openMyBook() {
+            var container = document.getElementById('book-container');
+            if (container) {
+                // 1. Trigger the 3D flip rotation immediately
+                container.classList.add('open');
 
-            if (bookCover && bookContainer) {
-                bookCover.addEventListener('click', function () {
-                    // 1. Trigger the 3D flip rotation
-                    bookContainer.classList.add('open');
+                // 2. Wait for the 1.6s animation to finish, then drop all locks
+                setTimeout(function () {
+                    container.classList.add('hidden-overlay');
+                    document.body.classList.remove('book-locked');
 
-                    // 2. Wait for the 1.6s animation to finish, then drop all locks
-                    setTimeout(function () {
-                        // Hide the cover overlay entirely
-                        bookContainer.classList.add('hidden-overlay');
-
-                        // Strip the locking class from body
-                        document.body.classList.remove('book-locked');
-
-                        // FORCE override layout locks on both HTML and Body tags
-                        document.documentElement.style.setProperty('overflow', 'visible', 'important');
-                        document.documentElement.style.setProperty('height', 'auto', 'important');
-                        document.body.style.setProperty('overflow', 'visible', 'important');
-                        document.body.style.setProperty('height', 'auto', 'important');
-                    }, 1600);
-                });
+                    // FORCE override layout locks on both HTML and Body tags for scrolling
+                    document.documentElement.style.setProperty('overflow', 'visible', 'important');
+                    document.documentElement.style.setProperty('height', 'auto', 'important');
+                    document.body.style.setProperty('overflow', 'visible', 'important');
+                    document.body.style.setProperty('height', 'auto', 'important');
+                }, 1600);
             }
-        });
+        }
     </script>
 </body>
 
