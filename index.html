@@ -496,6 +496,9 @@
 
     <!-- BOOK ANIMATION INTERACTION SCRIPT (Bypasses jQuery completely) -->
     <script type="text/javascript">
+        // Force the page to start at the top when it first loads
+        window.scrollTo(0, 0);
+
         function openMyBook() {
             var container = document.getElementById('book-container');
             if (container) {
@@ -512,6 +515,13 @@
                     document.documentElement.style.setProperty('height', 'auto', 'important');
                     document.body.style.setProperty('overflow', 'visible', 'important');
                     document.body.style.setProperty('height', 'auto', 'important');
+
+                    // Give the browser 10 milliseconds to recalculate the layout, 
+                    // then aggressively snap the scroll position to the very top.
+                    setTimeout(function () {
+                        window.scrollTo(0, 0);
+                    }, 10);
+
                 }, 1600);
             }
         }
