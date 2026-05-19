@@ -1,0 +1,170 @@
+/* Reset and Layout Setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #111;
+    font-family: 'Georgia', serif;
+    /* Serif typeface for a classic literary look */
+    overflow: hidden;
+}
+
+/* 3D Viewport Wrapper */
+.book-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 2200px;
+    /* Enhanced depth perception */
+    background-color: #0d0d0d;
+    z-index: 9999;
+}
+
+.book {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+/* --- THE REALISTIC COVER --- */
+.book-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 10;
+    cursor: pointer;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.cover-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Luxury textured hardcover look (Deep Navy blue grain) */
+    background: radial-gradient(circle at 70% 50%, #1b2a4a 0%, #0f172a 100%);
+    color: #e2cb99;
+    /* Base gold color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+
+/* Realistic Spine Crease Indentation */
+.book-spine-crease {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    /* Position where the hardback cover bends */
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+/* Gold Foil Title Plate */
+.cover-title-badge {
+    text-align: center;
+    border: 2px solid #e2cb99;
+    padding: 40px 60px;
+    background: rgba(15, 23, 42, 0.6);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(226, 203, 153, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.cover-title-badge h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    /* Shimmering Gold Foil Text Effect */
+    background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.cover-title-badge .separator {
+    height: 1px;
+    width: 80px;
+    background-color: #e2cb99;
+    margin: 0 auto 15px auto;
+}
+
+.cover-title-badge .subtitle {
+    font-size: 1.1rem;
+    color: #fcf6ba;
+}
+
+.interaction-hint {
+    position: absolute;
+    bottom: 50px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(252, 246, 186, 0.6);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* --- ANIMATION TRIGGER --- */
+.book-container.open .book-cover {
+    transform: rotateY(-145deg);
+    /* Flips wide open */
+    pointer-events: none;
+}
+
+/* 3D Page Stack Edge Effect (Visible on the far right right before opening) */
+.book-page-stack {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 15px;
+    height: calc(100% - 10px);
+    /* Mimics stacked paper pages */
+    background: linear-gradient(90deg, #e6e1da 0%, #fffdec 70%, #dcd7cd 100%);
+    box-shadow: inset 1px 0 3px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+/* --- THE ACTUAL INNER WEBSITE --- */
+.book-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #faf9f5;
+    /* Off-white book paper color */
+    color: #2b2b2b;
+    padding: 60px;
+    overflow-y: auto;
+    z-index: 1;
+    font-family: Arial, sans-serif;
+    /* Normal modern text for the portfolio itself */
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+}
